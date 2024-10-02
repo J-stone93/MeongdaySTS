@@ -1,4 +1,4 @@
-package com.example.MeongdaySTS.store.entity;
+package com.example.MeongdaySTS.baseEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
@@ -11,15 +11,14 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-@EntityListeners(value = { AuditingEntityListener.class })
+@EntityListeners(value = {AuditingEntityListener.class})
 @Getter
 public abstract class BaseEntity {
 
-    @CreatedDate
-    @Column(updatable = false)
+    @CreatedDate    //생성감지
+    @Column(updatable = false)  //최초등록이기에 생성 후에 변하면 안되니까
     LocalDateTime regDate;
 
     @LastModifiedDate
     LocalDateTime modDate;
-
 }
