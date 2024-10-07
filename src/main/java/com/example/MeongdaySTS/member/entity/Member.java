@@ -14,7 +14,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 
-public class MemberEntity extends BaseEntity {
+public class Member extends BaseEntity {
 
     @Id
     @Column(length = 20)
