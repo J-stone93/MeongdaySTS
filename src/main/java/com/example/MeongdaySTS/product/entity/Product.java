@@ -16,7 +16,7 @@ public class Product extends BaseEntity {
 
     @Id     //기본키
     @GeneratedValue(strategy = GenerationType.IDENTITY) //JPA에서 기본 키의 값을 자동으로 생성하도록 지시
-    int productNo;  //상품 고유번호
+    private int productNo;  //상품 고유번호
 
     @Column(length = 20, nullable = false)
     String productName; // 상품명
