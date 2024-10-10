@@ -64,14 +64,14 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public int remove(int productNo) {
         Optional<Product> result = repository.findById(productNo);
-
         if (result.isPresent()) {
             repository.deleteById(productNo);
-            return 1;   //성공
+            return 1;
         } else {
-            return 0;   //실패
+            return 0;
         }
     }
+
 
     @Override
     public List<ProductDTO> getByCategory(String productCategory) {

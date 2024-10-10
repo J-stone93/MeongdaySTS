@@ -3,9 +3,16 @@ package com.example.MeongdaySTS.product.service;
 import com.example.MeongdaySTS.product.dto.ProductDTO;
 import com.example.MeongdaySTS.product.entity.Product;
 
+import java.util.List;
+
 public interface ProductService {
 
-
+    int register(ProductDTO dto);   // product(상품) 등록
+    List<ProductDTO> getList();     // 상품 목록 보기
+    ProductDTO read(int productNo); // 상품 상세 보기
+    void modify(ProductDTO dto);    // 상품 수정
+    int remove(int productNo);     // 상품 삭제
+    List<ProductDTO> getByCategory(String productCategory);     //상품 카테고리별 목록 보기
 
 
     default Product dtoToEntity(ProductDTO dto){
