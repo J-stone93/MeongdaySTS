@@ -15,6 +15,8 @@ public interface ProductService {
     List<ProductDTO> getByCategory(String productCategory);     //상품 카테고리별 목록 보기
 
 
+    //	추상메소드만 가질 수 있다 + 자바8버전 이후부터는 일반메소드 추가 가능 -> default 키워드 요망
+
     default Product dtoToEntity(ProductDTO dto){
 
         Product entity = Product.builder()

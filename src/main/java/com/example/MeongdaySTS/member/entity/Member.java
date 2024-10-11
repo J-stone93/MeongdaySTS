@@ -1,5 +1,6 @@
 package com.example.MeongdaySTS.member.entity;
 
+
 import com.example.MeongdaySTS.baseEntity.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

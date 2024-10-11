@@ -19,11 +19,11 @@ public class ProductServiceTest {
     public void 상품등록(){
         ProductDTO dto = ProductDTO.builder()
                 .productNo(0)
-                .productName("멍멍쿠키")
-                .productPrice(15000)
+                .productName("왕왕과자")
+                .productPrice(20000)
                 .productCategory("과자류")
-                .productThembnail("작은사진22")
-                .productDetailImage("상세사진22")
+                .productThembnail("썸넬사진222")
+                .productDetailImage("상세사진222")
                 .build();
 
         service.register(dto);

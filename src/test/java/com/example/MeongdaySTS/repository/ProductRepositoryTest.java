@@ -26,10 +26,10 @@ public class ProductRepositoryTest {
     void 프로덕트_상품_등록(){
         Product product = Product.builder()
                 .productNo(0)
-                .productName("애견소주")
-                .productPrice(3000)
-                .productThembnail("썸넬1")
-                .productDetailImage("상세사진2")
+                .productName("맹맹소주")
+                .productPrice(5000)
+                .productThembnail("썸넬사진112")
+                .productDetailImage("상세사진112")
                 .productCategory("액체")
                 .build();
         repository.save(product);

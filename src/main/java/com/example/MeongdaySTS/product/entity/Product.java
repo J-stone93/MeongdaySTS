@@ -1,5 +1,6 @@
 package com.example.MeongdaySTS.product.entity;
 
+
 import com.example.MeongdaySTS.baseEntity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;

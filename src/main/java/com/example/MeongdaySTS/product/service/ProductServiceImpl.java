@@ -29,6 +29,7 @@ public class ProductServiceImpl implements ProductService{
         List<Product> result = repository.findAll();
         List<ProductDTO> dtoList = new ArrayList<>();
         dtoList = result.stream().map(this::entityToDto).collect(Collectors.toList());
+
         return dtoList;
     }
 
