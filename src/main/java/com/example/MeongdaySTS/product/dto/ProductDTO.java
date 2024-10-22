@@ -14,7 +14,7 @@ public class ProductDTO {
 
     int productNo;  //상품 고유번호
 
-    String productName; // 상품명
+    String productName; //상품명
 
     int productPrice;   //상품가격
 

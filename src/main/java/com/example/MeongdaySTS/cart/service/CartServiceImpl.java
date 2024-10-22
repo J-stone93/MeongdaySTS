@@ -44,4 +44,25 @@ public class CartServiceImpl implements CartService {
         return dtoList;
 
     }
+
+    @Override
+    public int remove(int cartNo) {
+        Optional<Cart> cart = repository.findById(cartNo);
+        if (cart.isPresent()){
+            repository.deleteById(cartNo);
+            return 1; //성공
+        } else {
+            return 0; //실패
+        }
+    }
+
+    @Override
+    public int removeAll(String memberId) {
+       List<Cart> cartList = repository.findByMemberId(memberId);
+        int deletedCount = cartList.size();
+       repository.deleteAll(cartList);
+       return deletedCount; //카트상품갯수반환
+    }
+
+
 }

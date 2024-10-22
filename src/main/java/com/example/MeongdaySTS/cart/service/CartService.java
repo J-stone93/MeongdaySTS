@@ -9,8 +9,13 @@ import java.util.List;
 
 public interface CartService {
 
-    int addCart(CartDTO dto); //카트담기 수량, 총액
+    int addCart(CartDTO dto); // 카트담기 수량, 총액
+
     List<CartDTO> getListCart(String memberId);
+
+    int remove(int cartNo);    // 카트 빼기
+
+    int removeAll(String memberId); // 카트 전부 빼기
 
 
   default Cart dtoToEntity(CartDTO dto){
