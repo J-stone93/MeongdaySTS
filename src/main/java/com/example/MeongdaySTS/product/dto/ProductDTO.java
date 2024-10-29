@@ -18,11 +18,14 @@ public class ProductDTO {
 
     int productPrice;   //상품가격
 
-    String productThembnail;    //썸네일
+    String productCategory;     //상품카테고리
+
+    String productContent; //상품내용
+
+//    String productThembnail;    //썸네일
+
 
     String productDetailImage;  //상품이미지
-
-    String productCategory;     //상품카테고리
 
     LocalDateTime regDate;  //상품 등록일
 

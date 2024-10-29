@@ -5,8 +5,10 @@ import com.example.MeongdaySTS.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 //@RestController = @Controller + @ResponseBody(뷰가 아닌 HTTP 응답 본문(body)으로 직렬화하여 전송할 때 사용. 주로 JSON 또는 XML 형태로 변환)
@@ -21,7 +23,8 @@ public class ProductController {
 
 //  ** 상품등록 나중에 권한주기 요망 **
     @PostMapping("/register")
-    public ResponseEntity<Integer> register(@RequestBody ProductDTO dto){
+    public ResponseEntity<Integer> register(@Validated @RequestBody ProductDTO dto){
+
         int no = service.register(dto);
         return new ResponseEntity<>(no, HttpStatus.CREATED); // 200성공코드와 게시물 반환
     }

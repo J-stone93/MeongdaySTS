@@ -22,7 +22,7 @@ public class ProductServiceTest {
                 .productName("왕왕과자")
                 .productPrice(20000)
                 .productCategory("과자류")
-                .productThembnail("썸넬사진222")
+//                .productThembnail("썸넬사진222")
                 .productDetailImage("상세사진222")
                 .build();
 
@@ -47,7 +47,7 @@ public class ProductServiceTest {
     public void 상품수정(){
         ProductDTO dto = service.read(5);
         dto.setProductPrice(30000);
-        dto.setProductThembnail("수정된더이쁜섬넬");
+//        dto.setProductThembnail("수정된더이쁜섬넬");
         service.modify(dto);
     }
 

@@ -28,7 +28,8 @@ public class ProductRepositoryTest {
                 .productNo(0)
                 .productName("맹맹소주")
                 .productPrice(5000)
-                .productThembnail("썸넬사진112")
+                .productContent("내용")
+//                .productThembnail("썸넬사진112")
                 .productDetailImage("상세사진112")
                 .productCategory("액체")
                 .build();

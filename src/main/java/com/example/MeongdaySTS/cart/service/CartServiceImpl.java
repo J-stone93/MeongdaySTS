@@ -16,24 +16,24 @@ public class CartServiceImpl implements CartService {
     @Autowired
     CartRepository repository;
 
-    @Override
-    public int addCart(CartDTO dto) {
-
-        Optional<Cart> optionalCart = repository.findByMemberAndProduct(dto.getMemberId(), dto.getProductNo());
-        Cart cart;
-
-        if(optionalCart.isPresent()){
-            cart = optionalCart.get();
-            cart.setProductCount(cart.getProductCount() + dto.getProductCount());
-            cart.setTotalPrice(cart.getTotalPrice() + dto.getTotalPrice());
-        }else {
-            cart = dtoToEntity(dto);
-            cart.setTotalPrice(cart.getProductCount() * cart.getProduct().getProductPrice());
-        }
-        Cart saveCart = repository.save(cart);
-
-        return cart.getCartNo();
-    }
+//    @Override
+//    public int addCart(CartDTO dto) {
+//
+//        Optional<Cart> optionalCart = repository.findByMemberAndProduct(dto.getMemberId(), dto.getProductNo());
+//        Cart cart;
+//
+//        if(optionalCart.isPresent()){
+//            cart = optionalCart.get();
+//            cart.setProductCount(cart.getProductCount() + dto.getProductCount());
+//            cart.setTotalPrice(cart.getTotalPrice() + dto.getTotalPrice());
+//        }else {
+//            cart = dtoToEntity(dto);
+//            cart.setTotalPrice(cart.getProductCount() * cart.getProduct().getProductPrice());
+//        }
+//        Cart saveCart = repository.save(cart);
+//
+//        return cart.getCartNo();
+//    }
 
     @Override
     public List<CartDTO> getListCart(String memberId) {

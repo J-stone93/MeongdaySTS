@@ -21,12 +21,15 @@ public class Product extends BaseEntity {
 
     @Column(length = 20, nullable = false)
     String productName; // 상품명
+    
+    @Column(length = 600, nullable = false)
+    String productContent; //상풍내용
 
     @Column(length = 10, nullable = false)
     int productPrice;   //상품가격
 
-    @Column(length = 100, nullable = false)
-    String productThembnail;    //썸네일
+//    @Column(length = 100, nullable = false)
+//    String productThembnail;    //썸네일
 
     @Column(length = 10, nullable = false)
     String productDetailImage;  //상품이미지
