@@ -24,7 +24,7 @@ public class Cart extends BaseEntity {
 //    상품
     @ManyToOne
     @JoinColumn(name = "product_no") //외래키컬럼 이름지정
-    private Product product;
+    private Product` product;
 
 //    해당 장바구니를 담은 회원
     @ManyToOne

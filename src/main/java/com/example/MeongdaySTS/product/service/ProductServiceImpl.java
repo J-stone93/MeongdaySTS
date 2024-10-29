@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Service
+@Service    //서비스 클래스로 지정
 public class ProductServiceImpl implements ProductService{
 
     @Autowired
@@ -28,7 +28,9 @@ public class ProductServiceImpl implements ProductService{
     public List<ProductDTO> getList() {
         List<Product> result = repository.findAll();
         List<ProductDTO> dtoList = new ArrayList<>();
-        dtoList = result.stream().map(this::entityToDto).collect(Collectors.toList());
+        dtoList = result.stream()   //리스트에서 스트림 생성
+                .map(this::entityToDto) //중간연산에서 entity를 dto로 변환
+                .collect(Collectors.toList());  //최종연산 결과 리스트를 반환
 
         return dtoList;
     }

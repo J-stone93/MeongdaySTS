@@ -26,7 +26,7 @@ public class ProductRepositoryTest {
     void 프로덕트_상품_등록(){
         Product product = Product.builder()
                 .productNo(0)
-                .productName("맹맹소주")
+                .productName("맹맹소주222")
                 .productPrice(5000)
                 .productThembnail("썸넬사진112")
                 .productDetailImage("상세사진112")
@@ -58,7 +58,7 @@ public class ProductRepositoryTest {
         Optional<Product> productMod = repository.findById(3);
         Product product = productMod.get();
         product.setProductName("애견맥주");
-        product.setProductCategory("액체");
+        product.setProductCategory("식음");
         product.setProductPrice(10000);
         repository.save(product);
     }

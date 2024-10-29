@@ -15,8 +15,7 @@ public interface ProductReviewService {
 
     List<ProductReviewDTO> getReviewList(); //리뷰 목록보기
 
-    ProductReviewDTO readReview(); // 리뷰 상세보기
-
+    ProductReviewDTO readReview(int productReviewNo); // 리뷰 상세보기
 
 
 //    인터페이스 : 추상메소드만 가질 수 있다. + 자바 8버전 이후부터는 일반메소드 추가 가능(default 키워드요망)

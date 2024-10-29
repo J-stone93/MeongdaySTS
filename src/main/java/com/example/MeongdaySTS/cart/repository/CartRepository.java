@@ -10,8 +10,7 @@ import java.util.Optional;
 
 public interface CartRepository extends JpaRepository<Cart, Integer> {
 
-Optional<Cart> findByMemberAndProduct(String memberId, int productNo);
-// Select * from cart where member_id = :memberId And Product_no = :productNo;
+//Optional<Cart> findByMemberIdAndProductNo(String memberId, int productNo);
 
 
 // 조금 더 복잡한 쿼리 작성 시 @Query 사용하여 직접 작성 요망
