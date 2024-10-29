@@ -22,8 +22,6 @@ public class ProductDTO {
 
     String productContent; //상품내용
 
-//    String productThembnail;    //썸네일
-
 
     String productDetailImage;  //상품이미지
 
