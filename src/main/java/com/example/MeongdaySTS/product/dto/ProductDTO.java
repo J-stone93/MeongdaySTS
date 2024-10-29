@@ -31,5 +31,4 @@ public class ProductDTO {
 
     LocalDateTime modDate;  // 상품 등록 후 수정일
 
-
 }
