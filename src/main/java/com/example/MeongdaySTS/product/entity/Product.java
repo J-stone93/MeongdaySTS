@@ -28,9 +28,8 @@ public class Product extends BaseEntity {
     @Column(length = 10, nullable = false)
     int productPrice;   //상품가격
 
-
-    @Column(length = 10, nullable = false)
-    String productDetailImage;  //상품이미지
+    @Column(length = 200, nullable = false)
+    private String imgPath; //첨부파일 이름
 
     @Column(length = 10, nullable = false)
     String productCategory;     //상품카테고리

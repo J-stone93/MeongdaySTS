@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
  * 만약 파일스트림이 없다면 메소드를 바로 종료한다
  * */
 
-@Component("Product")
+@Component
 public class ProductFileUtil {
 
     //이미지 파일을 저장할 경로

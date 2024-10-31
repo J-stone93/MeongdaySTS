@@ -3,8 +3,10 @@ package com.example.MeongdaySTS.product.service;
 import com.example.MeongdaySTS.product.dto.ProductDTO;
 import com.example.MeongdaySTS.product.entity.Product;
 import com.example.MeongdaySTS.product.repository.ProductRepository;
+import com.example.MeongdaySTS.product.util.ProductFileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +19,17 @@ public class ProductServiceImpl implements ProductService{
     @Autowired
     ProductRepository repository;
 
+    @Autowired
+    private ProductFileUtil fileUtil;
+
     @Override
-    public int register(ProductDTO dto) {
+    public int register(@ModelAttribute ProductDTO dto) {
         Product entity = dtoToEntity(dto);
+
+        String imgPath = fileUtil.fileUpload(dto.getProductDetailImage());
+
+        entity.setImgPath(imgPath);
+
         repository.save(entity);    //리파지토리에 게시물 등록
         return entity.getProductNo();   //엔티티 게시물번호등록
     }
@@ -57,7 +67,7 @@ public class ProductServiceImpl implements ProductService{
             product.setProductName(dto.getProductName());
             product.setProductPrice(dto.getProductPrice());
 //            product.setProductThembnail(dto.getProductThembnail());
-            product.setProductDetailImage(dto.getProductDetailImage());
+            product.setImgPath(dto.getImgPath());
             product.setProductCategory(dto.getProductCategory());
 
             repository.save(product);
