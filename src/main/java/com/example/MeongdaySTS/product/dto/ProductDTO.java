@@ -20,13 +20,12 @@ public class ProductDTO {
 
     String productCategory;     //상품카테고리
 
-    String productContent; //상품내용
-
+    String productContent;      //상품내용
 
     String productDetailImage;  //상품이미지
 
-    LocalDateTime regDate;  //상품 등록일
+    LocalDateTime regDate;      //상품 등록일
 
-    LocalDateTime modDate;  // 상품 등록 후 수정일
+    LocalDateTime modDate;      // 상품 등록 후 수정일
 
 }

@@ -19,7 +19,7 @@ public class CartServiceImpl implements CartService {
     @Override
     public int addCart(CartDTO dto) {
 
-        Optional<Cart> optionalCart = repository.findByMemberAndProduct(dto.getMemberId(), dto.getProductNo());
+        Optional<Cart> optionalCart = repository.findByMemberId_MemberIdAndProduct_ProductNo(dto.getMemberId(), dto.getProductNo());
         Cart cart;
 
         if(optionalCart.isPresent()){

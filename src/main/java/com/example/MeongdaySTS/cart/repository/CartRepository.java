@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public interface CartRepository extends JpaRepository<Cart, Integer> {
 
-Optional<Cart> findByMemberAndProduct(String memberId, int productNo);
+Optional<Cart> findByMemberId_MemberIdAndProduct_ProductNo(String memberId, int productNo);
 // Select * from cart where member_id = :memberId And Product_no = :productNo;
 
 

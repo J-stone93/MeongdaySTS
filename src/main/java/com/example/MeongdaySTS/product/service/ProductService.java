@@ -24,7 +24,6 @@ public interface ProductService {
                 .productName(dto.getProductName())
                 .productPrice(dto.getProductPrice())
                 .productContent(dto.getProductContent())
-//                .productThembnail(dto.getProductThembnail())
                 .productDetailImage(dto.getProductDetailImage())
                 .productCategory(dto.getProductCategory())
                 .build();
@@ -40,7 +39,6 @@ public interface ProductService {
                 .productName(entity.getProductName())
                 .productContent(entity.getProductContent())
                 .productPrice(entity.getProductPrice())
-//                .productThembnail(entity.getProductThembnail())
                 .productDetailImage(entity.getProductDetailImage())
                 .productCategory(entity.getProductCategory())
                 .regDate(entity.getRegDate())

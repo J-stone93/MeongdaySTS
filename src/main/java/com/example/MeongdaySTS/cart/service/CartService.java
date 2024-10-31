@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface CartService {
 
-//    int addCart(CartDTO dto); // 카트담기 수량, 총액
+    int addCart(CartDTO dto); // 카트담기 수량, 총액
 
     List<CartDTO> getListCart(String memberId);
 

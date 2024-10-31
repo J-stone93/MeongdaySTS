@@ -1,10 +1,8 @@
 package com.example.MeongdaySTS.repository;
 
-import com.example.MeongdaySTS.product.dto.ProductDTO;
 import com.example.MeongdaySTS.product.entity.Product;
 import com.example.MeongdaySTS.product.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.common.processor.ObjectColumnProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -19,7 +17,7 @@ public class ProductRepositoryTest {
 
     @Test
     void 빈을_가졌는지_확인(){
-        System.out.println("ProductRepository: " + repository);
+        System.out.println("ProductRepository 빈? : " + repository);
     }
 
     @Test
@@ -29,7 +27,6 @@ public class ProductRepositoryTest {
                 .productName("맹맹소주222")
                 .productPrice(5000)
                 .productContent("내용")
-//                .productThembnail("썸넬사진112")
                 .productDetailImage("상세사진112")
                 .productCategory("액체")
                 .build();
