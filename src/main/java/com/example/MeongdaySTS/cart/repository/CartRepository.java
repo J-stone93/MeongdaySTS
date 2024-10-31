@@ -15,6 +15,9 @@ Optional<Cart> findByMemberId_MemberIdAndProduct_ProductNo(String memberId, int 
 
 
 // 조금 더 복잡한 쿼리 작성 시 @Query 사용하여 직접 작성 요망
-@Query(value = "SELECT * FROM cart c JOIN member m ON c.member_id = m.mem_id WHERE m.mem_id = :memberId", nativeQuery = true)
+@Query(value = "SELECT c.* FROM cart c JOIN member m ON c.member_id = m.member_id WHERE m.member_id = :memberId", nativeQuery = true)
 List<Cart> findByMemberId(@Param("memberId") String memberId);
+
+
 }
+
