@@ -17,25 +17,39 @@ public class Order extends BaseEntity {
 //    주문번호
     @Id     //기본키
     @GeneratedValue(strategy = GenerationType.IDENTITY)     //Jpa가기본키자동생성감지
-    int orderNo;
+    private int orderNo;
 
 //    아이디 외래키
     @ManyToOne
-    Member memberId;
+    private Member memberId;
 
 //    주소
     @Column
-    String address;
+    private String address;
 
 //    상세주소
     @Column
-    String detailedAddress;
+    private String detailedAddress;
 
 //    수령인
+    @Column(length = 30, nullable = false)
+    private String customerName;
 
 //    연락처
+    @Column(length = 30, nullable = false)
+    private String phoneNumber;
+
 //    우편번호
-//    총가격
+    @Column(length = 6, nullable = false)
+    private String postalCode;
+
+//    총결제가격
+    @Column(nullable = false)
+    private int totalPaymentAmount;
+
+//    일대다관계
+//    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+//    List<OrderItem> orderItems = new ArrayList<>();
 
 
 
