@@ -37,7 +37,7 @@ public interface ProductService {
                 .productName(entity.getProductName())
                 .productContent(entity.getProductContent())
                 .productPrice(entity.getProductPrice())
-                .imgPath(entity.getImgPath())
+                .imgPath(entity.getImgPaths())
                 .productCategory(entity.getProductCategory())
                 .regDate(entity.getRegDate())
                 .modDate(entity.getModDate())

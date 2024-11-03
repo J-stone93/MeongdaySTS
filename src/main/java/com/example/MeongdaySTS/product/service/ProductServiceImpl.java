@@ -7,6 +7,7 @@ import com.example.MeongdaySTS.product.util.ProductFileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,17 +24,20 @@ public class ProductServiceImpl implements ProductService{
     private ProductFileUtil fileUtil;
 
     @Override
-    public int register(@ModelAttribute ProductDTO dto) {
+    public int register(ProductDTO dto) {
         Product entity = dtoToEntity(dto);
 
-        String imgPath = fileUtil.fileUpload(dto.getProductDetailImage());
+        List<String> imgPaths = new ArrayList<>();
+        for (MultipartFile file : dto.getUploadFile()) {
+            String imgPath = fileUtil.fileUpload(file);
+            imgPaths.add(imgPath);
+        }
 
-        entity.setImgPath(imgPath);
+        entity.setImgPaths(imgPaths); // 리스트로 필드를 추가하거나 연결 테이블에 저장
 
-        repository.save(entity);    //리파지토리에 게시물 등록
-        return entity.getProductNo();   //엔티티 게시물번호등록
+        repository.save(entity);
+        return entity.getProductNo();
     }
-
     @Override
     public List<ProductDTO> getList() {
         List<Product> result = repository.findAll();
@@ -67,7 +71,7 @@ public class ProductServiceImpl implements ProductService{
             product.setProductName(dto.getProductName());
             product.setProductPrice(dto.getProductPrice());
 //            product.setProductThembnail(dto.getProductThembnail());
-            product.setImgPath(dto.getImgPath());
+            product.setImgPaths(dto.getImgPath());
             product.setProductCategory(dto.getProductCategory());
 
             repository.save(product);

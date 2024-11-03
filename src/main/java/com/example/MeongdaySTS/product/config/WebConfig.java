@@ -23,13 +23,5 @@ public class WebConfig implements WebMvcConfigurer{
         WebMvcConfigurer.super.addResourceHandlers(registry);
     }
 
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**") // 모든 엔드포인트에 CORS 설정
-                .allowedOrigins("http://localhost:3000") // 허용할 클라이언트 도메인 설정
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // 허용할 HTTP 메소드
-                .allowedHeaders("*") // 허용할 헤더
-                .allowCredentials(true); // 인증 정보 허용 여부
-    }
 
 }

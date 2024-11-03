@@ -5,6 +5,9 @@ import com.example.MeongdaySTS.baseEntity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -29,7 +32,7 @@ public class Product extends BaseEntity {
     int productPrice;   //상품가격
 
     @Column(length = 200, nullable = false)
-    private String imgPath; //첨부파일 이름
+    List<String> imgPaths = new ArrayList<>(); // 다중 이미지 경로 필드
 
     @Column(length = 10, nullable = false)
     String productCategory;     //상품카테고리
