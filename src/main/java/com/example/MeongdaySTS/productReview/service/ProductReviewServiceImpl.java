@@ -40,6 +40,11 @@ public class ProductReviewServiceImpl implements ProductReviewService {
         }else {
             return null;
         }
+    }   //리뷰상세읽기는 작업해보고 추후 지워도될듯 댓글처럼 리스트로만 바로 보여지게
+
+    @Override
+    public void removeReview(int productReviewNo) {
+        repository.deleteById(productReviewNo);
     }
 
 }

@@ -18,9 +18,9 @@ public class ProductReviewDTO {
 
     private String writer;  // 리뷰 쓰는 아이디
 
-    private String ReviewContent; // 리뷰 내용
+    private String reviewContent; // 리뷰 내용
 
-    private int ReviewScore; // 별점
+    private int reviewScore; // 별점
 
     LocalDateTime regDate; // 별점 등록일
 

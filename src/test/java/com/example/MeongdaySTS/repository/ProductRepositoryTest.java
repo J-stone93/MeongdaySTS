@@ -20,18 +20,18 @@ public class ProductRepositoryTest {
         System.out.println("ProductRepository 빈? : " + repository);
     }
 
-    @Test
-    void 프로덕트_상품_등록(){
-        Product product = Product.builder()
-                .productNo(0)
-                .productName("맹맹소주222")
-                .productPrice(5000)
-                .productContent("내용")
-                .productDetailImage("상세사진112")
-                .productCategory("액체")
-                .build();
-        repository.save(product);
-    }
+//    @Test
+//    void 프로덕트_상품_등록(){
+//        Product product = Product.builder()
+//                .productNo(0)
+//                .productName("맹맹소주222")
+//                .productPrice(5000)
+//                .productContent("내용")
+//                .productDetailImage("상세사진112")
+//                .productCategory("액체")
+//                .build();
+//        repository.save(product);
+//    }
 
     @Test
     void 상품목록조회(){

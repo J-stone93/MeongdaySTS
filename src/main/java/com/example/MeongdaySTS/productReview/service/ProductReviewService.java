@@ -17,6 +17,8 @@ public interface ProductReviewService {
 
     ProductReviewDTO readReview(int productReviewNo); // 리뷰 상세보기
 
+    void removeReview(int productReviewNo);
+
 
 //    인터페이스 : 추상메소드만 가질 수 있다. + 자바 8버전 이후부터는 일반메소드 추가 가능(default 키워드요망)
     default ProductReview dtoToEntity(ProductReviewDTO dto){
@@ -28,8 +30,8 @@ public interface ProductReviewService {
                 .productReviewNo(dto.getProductReviewNo())
                 .product(product)
                 .writer(member)
-                .ReviewContent(dto.getReviewContent())
-                .ReviewScore(dto.getReviewScore())
+                .reviewContent(dto.getReviewContent())
+                .reviewScore(dto.getReviewScore())
                 .build();
         return entity;
 
@@ -41,8 +43,8 @@ public interface ProductReviewService {
                 .productReviewNo(entity.getProductReviewNo())
                 .productNo(entity.getProduct().getProductNo())
                 .writer(entity.getWriter().getMemberId())
-                .ReviewContent(entity.getReviewContent())
-                .ReviewScore(entity.getReviewScore())
+                .reviewContent(entity.getReviewContent())
+                .reviewScore(entity.getReviewScore())
                 .regDate(entity.getRegDate())
                 .modDate(entity.getModDate())
                 .build();

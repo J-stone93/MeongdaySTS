@@ -37,11 +37,11 @@ public class CartServiceTest {
 //        memberRepository.save(member);
 
         Product product = productRepository.findByProductNo(1);
-        int productCount = 1;
+        int productCount = 3;
 
         CartDTO dto = CartDTO.builder()
                 .cartNo(0)
-                .memberId("bbq5884")
+                .memberId("bbq5883")
                 .productNo(2)
                 .productCount(productCount)
                 .totalPrice(productCount * product.getProductPrice())
