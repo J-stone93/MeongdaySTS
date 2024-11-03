@@ -21,9 +21,6 @@ public class ProductController {
     @Autowired
     ProductService service;
 
-    @Autowired
-    ProductRepository repository;
-
 //  ResponseEntity 클래스를 사용하면, 결과값, 상태코드, 헤더값을 모두 프론트에 넘겨줄 수 있고, 에러코드 또한 섬세하게 설정해서 보내줄 수 있다는 장점
 
 //  ** 상품등록 나중에 권한주기 요망 **
@@ -31,7 +28,7 @@ public class ProductController {
     public ResponseEntity<Integer> register(ProductDTO dto){
 
         int no = service.register(dto);
-        return new ResponseEntity<>(no, HttpStatus.OK); // 200성공코드와 게시물 반환
+        return new ResponseEntity<>(no, HttpStatus.CREATED); // 200성공코드와 게시물 반환
     }
 
     @GetMapping

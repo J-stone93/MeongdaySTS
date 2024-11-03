@@ -30,10 +30,10 @@ public class ProductReview extends BaseEntity {
 
 //    리뷰 내용
     @Column(length = 1000, nullable = false)
-    private String ReviewContent;
+    private String reviewContent;
 
 //    별점
     @Column
-    private int ReviewScore;
+    private int reviewScore;
 
 }

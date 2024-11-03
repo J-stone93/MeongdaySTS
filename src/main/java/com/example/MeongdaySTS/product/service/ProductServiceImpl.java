@@ -15,7 +15,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service    //서비스 클래스로 지정
-public class ProductServiceImpl implements ProductService{
+public class
+ProductServiceImpl implements ProductService{
 
     @Autowired
     ProductRepository repository;
@@ -88,7 +89,6 @@ public class ProductServiceImpl implements ProductService{
             return 0;
         }
     }
-
 
     @Override
     public List<ProductDTO> getByCategory(String productCategory) {

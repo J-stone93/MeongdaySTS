@@ -3,6 +3,8 @@ package com.example.MeongdaySTS.cart.service;
 import com.example.MeongdaySTS.cart.dto.CartDTO;
 import com.example.MeongdaySTS.cart.entity.Cart;
 import com.example.MeongdaySTS.cart.repository.CartRepository;
+import com.example.MeongdaySTS.product.entity.Product;
+import com.example.MeongdaySTS.product.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,9 @@ public class CartServiceImpl implements CartService {
     @Autowired
     CartRepository repository;
 
+    @Autowired
+    ProductRepository productRepository;
+
     @Override
     public int addCart(CartDTO dto) {
 
@@ -25,14 +30,18 @@ public class CartServiceImpl implements CartService {
         if(optionalCart.isPresent()){
             cart = optionalCart.get();
             cart.setProductCount(cart.getProductCount() + dto.getProductCount());
-            cart.setTotalPrice(cart.getTotalPrice() + dto.getTotalPrice());
+            cart.setTotalPrice(cart.getProductCount() * cart.getProduct().getProductPrice());
         }else {
             cart = dtoToEntity(dto);
-            cart.setTotalPrice(cart.getProductCount() * cart.getProduct().getProductPrice());
+            Product product = productRepository.findByProductNo(dto.getProductNo());
+            cart.setTotalPrice(dto.getProductCount() * product.getProductPrice());
         }
         Cart saveCart = repository.save(cart);
 
         return cart.getCartNo();
+
+        // if부분 : 총 가격을 제품 가격과 수량으로 계산
+        // else부분 : 제품의 가격을 통해 총 가격 설정
     }
 
     @Override
